@@ -4,6 +4,8 @@
 class TcpClientMediator :public INetMediator
 {
     Q_OBJECT
+signals:
+    void SIG_ReadyData(long lSendIp,char* buf,int nLen);
 public:
 	TcpClientMediator();
 	~TcpClientMediator();

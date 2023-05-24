@@ -4,8 +4,7 @@ class INet;//不包含头文件，直接声明类
 class INetMediator : public QObject
 {
     Q_OBJECT
-signals:
-    void SIG_ReadyData(long lSendIp,char* buf,int nLen);
+
 public:
     INetMediator() ;
     virtual ~INetMediator();//使用时，父类指针指向子类，使用虚析构

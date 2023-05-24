@@ -9,5 +9,6 @@ int main(int argc, char *argv[])
 //    w.show();
 
     CKernel kernel;
+
     return a.exec();
 }

@@ -1,5 +1,7 @@
+#pragma once
 #include"TcpClientMediator.h"
 #include"TcpClient.h"
+#include<INetMediator.h>
 TcpClientMediator::TcpClientMediator()
 {
 	m_pNet = new TcpClient(this);
@@ -35,10 +37,9 @@ bool TcpClientMediator::SendData(long lSendIp, char* buf, int nLen)
 	}
 	return true;
 }
-#include<iostream>
-using namespace std;
+#include <qdebug.h>
 void TcpClientMediator::DealData(long lSendIp, char* buf, int nLen)
 {
-    cout << lSendIp << ":" << buf << endl;
+    qDebug()<< lSendIp << ":" << buf << endl;
     Q_EMIT SIG_ReadyData(lSendIp,buf,nLen);
 }
